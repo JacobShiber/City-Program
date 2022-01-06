@@ -72,7 +72,7 @@ namespace City_Program.Controllers.API
         {
             try
             {
-                var expectedCitizen = dataContext.Citizens.Single(citizen => citizen.Id == id);
+                Citizen expectedCitizen = dataContext.Citizens.Single(citizen => citizen.Id == id);
                 expectedCitizen.FirstName = editedCitizen.FirstName;
                 expectedCitizen.LastName = editedCitizen.LastName;
                 expectedCitizen.BirthDate = editedCitizen.BirthDate;

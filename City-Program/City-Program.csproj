@@ -140,10 +140,16 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\API\SchoolsController.cs" />
     <Compile Include="Controllers\API\TelAvivController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Schools.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Schools.dbml</DependentUpon>
     </Compile>
     <Compile Include="Models\Telaviv.designer.cs">
       <AutoGen>True</AutoGen>
@@ -166,6 +172,11 @@
     <Content Include="Models\Telaviv.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>Telaviv.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Models\Schools.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Schools.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -216,6 +227,11 @@
   <ItemGroup>
     <None Include="Models\Telaviv.dbml.layout">
       <DependentUpon>Telaviv.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\Schools.dbml.layout">
+      <DependentUpon>Schools.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <PropertyGroup>
