@@ -72,12 +72,15 @@ namespace City_Program.Controllers.API
         {
             try
             {
-                //dataContext.Citizens = from citizen in dataContext.Citizens where citizen.Id == id; 
-                //expectedCitizen.FirstName = editedCitizen.FirstName;
-                //expectedCitizen.LastName = editedCitizen.LastName;
-                //expectedCitizen.BirthDate = editedCitizen.BirthDate;
-                //expectedCitizen.Adress = editedCitizen.Adress;
-                //expectedCitizen.YearsInCity = editedCitizen.YearsInCity;
+                var expectedCitizen = dataContext.Citizens.Single(citizen => citizen.Id == id);
+                expectedCitizen.FirstName = editedCitizen.FirstName;
+                expectedCitizen.LastName = editedCitizen.LastName;
+                expectedCitizen.BirthDate = editedCitizen.BirthDate;
+                expectedCitizen.Adress = editedCitizen.Adress;
+                expectedCitizen.YearsInCity = editedCitizen.YearsInCity;
+
+                dataContext.SubmitChanges();
+
 
                 return Ok(new { Massage = "Success! Citizen been edited." });
 
@@ -93,8 +96,23 @@ namespace City_Program.Controllers.API
         }
 
         // DELETE: api/TelAviv/5
-        public void Delete(int id)
+        public IHttpActionResult DeleteCitizen(int id)
         {
+            try
+            {
+                dataContext.Citizens.DeleteOnSubmit(dataContext.Citizens.Single(citizen => citizen.Id == id));
+                dataContext.SubmitChanges();
+
+                return Ok(new { Massage = "Success! Citizen deleted" });
+            }
+            catch(SqlException ex)
+            {
+                return Ok(new { Massage = "Faliure", ex.Message });
+            }
+            catch(Exception ex)
+            {
+                return Ok(new { Massage = "Faliure", ex.Message });
+            }
         }
     }
 }
