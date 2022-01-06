@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Telaviv">
+  <DataContextMoniker Name="/TelavivDataContext" />
+  <nestedChildShapes>
+    <classShape Id="0163d9ea-04f4-4d93-9676-9dee27312eae" absoluteBounds="3.875, 0.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/TelavivDataContext/Citizen" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2d47ae99-dc86-46bc-b85d-4ecf1d66684d" absoluteBounds="3.8899999999999997, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
